@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.SceneManagement;
 
 public class FinNiv : MonoBehaviour
 {
@@ -29,8 +30,17 @@ public class FinNiv : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             SetFinis(true);
-            Debug.Log("Game Over votre temps est de " + Time.time + " avec une pénaliter de " + _gestionJeu.GetPoint() + " accrochage, pour un total de " + (_gestionJeu.GetPoint() + Time.time));
             _player.FinPartie();
+            int noScene = SceneManager.GetActiveScene().buildIndex;
+            if(noScene == 2)
+            {
+                //Mettre score
+            }
+            else
+            {
+                //Charge la scene suivante 
+                SceneManager.LoadScene(noScene + 1);
+            }
         }
     }
 }
