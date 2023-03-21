@@ -36,5 +36,10 @@ public class Player : MonoBehaviour
         float positionZ = Input.GetAxis("Vertical");
         Vector3 direction = new Vector3(positionX, 0f, positionZ);
         _rb.velocity = direction * Time.fixedDeltaTime * _vitesse;
+
+        if(direction != Vector3.zero)
+        {
+            transform.forward = direction;
+        }
     }
 }
