@@ -6,6 +6,9 @@ public class GestionJeu : MonoBehaviour
 {
     //Attributs
     private int _pointage;
+    Player _tempsdebut;
+    float _tempsdeduction;
+    
 
     private void Instructions()
     {
@@ -13,11 +16,15 @@ public class GestionJeu : MonoBehaviour
         Debug.Log("*** Course a obstacle ***");
         Debug.Log("Atteind la fin du parkour le plus vite possible!");
         Debug.Log("Chaque obstacle touché entraine une pénalité");
+       
     }
     void Start()
     {
-        Instructions(); 
+        Instructions();
+        _tempsdebut = FindObjectOfType<Player>();
+        _tempsdeduction = _tempsdebut.getTempsdebut();
     }
+    
 
     public void AugmenterPointage()
     {
@@ -27,9 +34,7 @@ public class GestionJeu : MonoBehaviour
 
     public int GetPoint() { return _pointage; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
+    
+    
 }

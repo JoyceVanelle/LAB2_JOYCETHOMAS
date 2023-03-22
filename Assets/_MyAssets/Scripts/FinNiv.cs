@@ -10,6 +10,7 @@ public class FinNiv : MonoBehaviour
     private bool isFinis = false;
     private GestionJeu _gestionJeu;
     private Player _player;
+    private float _tempstotal;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,9 @@ public class FinNiv : MonoBehaviour
             int noScene = SceneManager.GetActiveScene().buildIndex;
             if(noScene == 2)
             {
-                //Mettre score
+                Debug.Log(Time.time);
+                // Obtenir le temps total
+                Debug.Log("Le Temps Total est de :" + Time.time + _player.getTempsdebut() + _gestionJeu.GetPoint());
             }
             else
             {
@@ -43,4 +46,6 @@ public class FinNiv : MonoBehaviour
             }
         }
     }
+
+    
 }
