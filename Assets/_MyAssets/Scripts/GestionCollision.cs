@@ -21,7 +21,6 @@ public class GestionCollision : MonoBehaviour
         {
             if (!_toucher)
             {
-                Debug.Log("Momo");
                 gameObject.GetComponent<MeshRenderer>().material.color = Color.red;//Changement de couleur
                 _gestionJeu.AugmenterPointage();
                 _toucher = true;

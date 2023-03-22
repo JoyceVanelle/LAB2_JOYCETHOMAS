@@ -802,18 +802,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitesse: 40
---- !u!114 &546687895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546687890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d592dce0396d641bf94d19dfa1282d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &568583005 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: f4b69fbbe6e76794aa701fde37c48b94, type: 3}
@@ -1861,18 +1849,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitesse: 40
---- !u!114 &1164453408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164453403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d592dce0396d641bf94d19dfa1282d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1198561794 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: f4b69fbbe6e76794aa701fde37c48b94, type: 3}
@@ -2913,18 +2889,6 @@ CapsuleCollider:
   m_Height: 2.1222806
   m_Direction: 1
   m_Center: {x: -0.0019368529, y: 1.0611403, z: 0.07858753}
---- !u!114 &1906656260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1906656251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 728625d9aa4cd5e4c8c887d599571df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1932651554 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9091624534983645290, guid: 4a300d8f61ec1fe4a9938414cc850346, type: 3}

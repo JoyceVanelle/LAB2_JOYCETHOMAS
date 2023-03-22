@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 298360945206914476}
   - component: {fileID: 660791478968331169}
   - component: {fileID: 2051935112879094109}
-  - component: {fileID: -4111058771434900478}
+  - component: {fileID: 1152404370362154494}
   m_Layer: 0
   m_Name: Voiture
   m_TagString: Untagged
@@ -308,7 +308,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-4111058771434900478
+--- !u!114 &1152404370362154494
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 934207120494409341}
   - component: {fileID: 4385786920550158690}
   - component: {fileID: 1764532413662018509}
+  - component: {fileID: 4756587217156170049}
   m_Layer: 0
   m_Name: Carrosserie
   m_TagString: Untagged
@@ -417,6 +418,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4756587217156170049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4996325623979377573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d592dce0396d641bf94d19dfa1282d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5294319103038784032
 GameObject:
   m_ObjectHideFlags: 0
