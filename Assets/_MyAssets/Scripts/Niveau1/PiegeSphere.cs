@@ -12,7 +12,7 @@ public class PiegeSphere : MonoBehaviour
 
     private void Start()
     {
-        _rb = _piege.GetComponent<Rigidbody>();
+        _rb = _piege.GetComponent<Rigidbody>(); //va chercher le Rb de l'objet
     }
 
     private void OnTriggerEnter(Collider other)
@@ -20,8 +20,8 @@ public class PiegeSphere : MonoBehaviour
         if (!_estActive && other.gameObject.tag == "Player")
         {
             _estActive = true;
-            _rb.useGravity = true;
-            _rb.AddForce(Vector3.back * _intensiteForce);
+            _rb.useGravity = true; //Active la gravité sur le rb
+            _rb.AddForce(Vector3.back * _intensiteForce); //ajoute la force 
 
         }
 

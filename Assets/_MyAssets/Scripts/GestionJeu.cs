@@ -47,7 +47,7 @@ public class GestionJeu : MonoBehaviour
     {
         _pointage = 0;
         Debug.Log("*** Course a obstacle ***");
-        Debug.Log("Atteind la fin du parkour le plus vite possible!");
+        Debug.Log("Atteind la fin du parkour le plus vite possible!");//Regles
         Debug.Log("Chaque obstacle touché entraine une pénalité");
        
     }
@@ -56,7 +56,7 @@ public class GestionJeu : MonoBehaviour
         Instructions();
         _tempsdebut = FindObjectOfType<Player>();
         _player = FindObjectOfType<Player>();
-        _tempsdeduction = _tempsdebut.getTempsdebut();
+        _tempsdeduction = _tempsdebut.getTempsdebut();//Va chercher le temps avant que le joueur bouge
     }
 
 
@@ -123,28 +123,28 @@ public class GestionJeu : MonoBehaviour
         float _tempNiv;
         int accrochage;
         _niv++; 
-        _tempNiv = (Time.time - _player.getTempsdebut());
-       _tempTot += GetTempNiv();
+        _tempNiv = (Time.time - _player.getTempsdebut()); //Defini le temps du niveau net, en soustrayant le temps total par le temps d'immobilité
+       _tempTot += GetTempNiv(); //Accumule le temps pour calculer le temps total
         accrochage = GetPoint();
         if(_niv ==1)
         {
-            _tempsNiveau1= _tempNiv;
-            _accrochageNiveau1= accrochage;
-            _tempTot += _tempsNiveau1;
+            _tempsNiveau1= _tempNiv;//Calcule le temps du niv
+            _accrochageNiveau1= accrochage; //Calcule les accrochages du niveau
+            _tempTot += _tempsNiveau1;//Accumule le temps pour calculer le temps total
             _messageFinal += "Pour le niveau " + _niv + " le temps est de: " + _tempsNiveau1 + " et le nombre d'accrochage est de: " + _accrochageNiveau1;
         }
         if(_niv == 2)
         {
-            _tempsNiveau2=(_tempNiv - _tempsNiveau1);
-            _accrochageNiveau2 = (accrochage - _accrochageNiveau1);
-            _tempTot += _tempsNiveau2;
+            _tempsNiveau2=(_tempNiv - _tempsNiveau1);//Calcule le temps du niv
+            _accrochageNiveau2 = (accrochage - _accrochageNiveau1);//Calcule les accrochages du niveau
+            _tempTot += _tempsNiveau2;//Accumule le temps pour calculer le temps total
             _messageFinal += "Pour le niveau " + _niv + " le temps est de: " + _tempsNiveau2 + " et le nombre d'accrochage est de: " + _accrochageNiveau2;
         }
         if(_niv == 3)
         {
-            _tempsNiveau3 = (_tempNiv - (_tempsNiveau2 + _tempsNiveau1));
-            _accrochageNiveau3 = (accrochage - (_accrochageNiveau2 + _accrochageNiveau1));
-            _tempTot += _tempsNiveau3;
+            _tempsNiveau3 = (_tempNiv - (_tempsNiveau2 + _tempsNiveau1));//Calcule le temps du niv
+            _accrochageNiveau3 = (accrochage - (_accrochageNiveau2 + _accrochageNiveau1));//Calcule les accrochages du niveau
+            _tempTot += _tempsNiveau3;//Accumule le temps pour calculer le temps total
             _messageFinal += "Pour le niveau " + _niv + " le temps est de: " + _tempsNiveau3 + " et le nombre d'accrochage est de: " + _accrochageNiveau3;
 
         }
@@ -153,7 +153,6 @@ public class GestionJeu : MonoBehaviour
     public void AugmenterPointage()
     {
         _pointage++;
-        Debug.Log("Nombre d'accrochage : " + _pointage);
     }
 
     public int GetPoint() { return _pointage; } //Pour aller chercher les points 

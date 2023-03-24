@@ -33,13 +33,13 @@ public class Player : MonoBehaviour
 
     public void FinPartie()
     {
-        this.gameObject.SetActive(false); 
+        this.gameObject.SetActive(false); //Sert a couper les mouvement du joueurs lors de la fin de partie
     }
 
-    private void MouvementJoueur()
+    private void MouvementJoueur() // Pour que le joueur bouge avec son rigidbody
     {
         if (_debutJeu == true && (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0))
-        {
+        {//Le if sert a regarder si le joueur bouge, et de calculer le temps qu'il prends avant de bouger
         
             _tempsdebut = Time.time;
             _debutJeu = false;
@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
 
         if(direction != Vector3.zero)
         {
-            transform.forward = direction;
+            transform.forward = direction;//Le mouvement
         }
     }
 }

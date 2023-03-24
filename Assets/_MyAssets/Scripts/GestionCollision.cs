@@ -31,8 +31,8 @@ public class GestionCollision : MonoBehaviour
             if (!_toucher)
             {
                 gameObject.GetComponent<MeshRenderer>().material.color = Color.red;//Changement de couleur
-                _gestionJeu.AugmenterPointage();
-                _toucher = true;
+                _gestionJeu.AugmenterPointage();//Augmente pointage
+                _toucher = true; //Defini objet comme toucher pour pas toucher trop de fois dans un trop petit delai
                 Invoke("DelaiFin", 4);
             }
 
@@ -40,10 +40,10 @@ public class GestionCollision : MonoBehaviour
 
     }
 
-    private void DelaiFin()
+    private void DelaiFin() //Sert a remettre un object "Dans le jeu" pour qu'il soit retouché
     {
-        _toucher= false;
-        gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
+        _toucher= false; //remets l'objet touchable
+        gameObject.GetComponent<MeshRenderer>().material.color = Color.green; // change la couleur pour une couleur verte retouchable, mais previent quand meme que l'objet a deja ete toucher
     }
 
 

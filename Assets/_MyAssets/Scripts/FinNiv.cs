@@ -26,17 +26,17 @@ public class FinNiv : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             
-            _player.FinPartie();
-            noScene = SceneManager.GetActiveScene().buildIndex;
+            _player.FinPartie();//Coupe mouvement du joueur et le disable
+            noScene = SceneManager.GetActiveScene().buildIndex; //Va chercher l'id de scene active
             if (noScene == 2)
             {
-                _gestionJeu.FinNiveau();
-                Debug.Log(_gestionJeu.GetMess() + " Temps final: " + _gestionJeu.GetTempTot() + " Nombre d'accrochage total: " + _gestionJeu.GetPoint() + " Pour un temps total avec penalités de: " + (_gestionJeu.GetTempTot() + _gestionJeu.GetPoint() )) ;
+                _gestionJeu.FinNiveau(); // appel la fonction pour calculer point dernier niveau
+                Debug.Log(_gestionJeu.GetMess() + " Temps final: " + _gestionJeu.GetTempTot() + " Nombre d'accrochage total: " + _gestionJeu.GetPoint() + " Pour un temps total avec penalités de: " + (_gestionJeu.GetTempTot() + _gestionJeu.GetPoint() )) ;//Log le message de fin
             }
             else
             {
-                _gestionJeu.FinNiveau();
-                SceneManager.LoadScene(noScene + 1);
+                _gestionJeu.FinNiveau();// appel la fonction pour calculer point du niveau
+                SceneManager.LoadScene(noScene + 1); //Prochaine scene
             }
         }
     }
