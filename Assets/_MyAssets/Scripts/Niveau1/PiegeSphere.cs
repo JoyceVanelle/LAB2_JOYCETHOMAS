@@ -20,7 +20,6 @@ public class PiegeSphere : MonoBehaviour
         if (!_estActive && other.gameObject.tag == "Player")
         {
             _estActive = true;
-            Debug.Log("Piege Activer, gotem");
             _rb.useGravity = true;
             _rb.AddForce(Vector3.back * _intensiteForce);
 

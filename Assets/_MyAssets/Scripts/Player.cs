@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
 
     public void FinPartie()
     {
-        this.gameObject.SetActive(false);
+        this.gameObject.SetActive(false); 
     }
 
     private void MouvementJoueur()

@@ -10,7 +10,8 @@ public class FinNiv : MonoBehaviour
     private bool isFinis = false;
     private GestionJeu _gestionJeu;
     private Player _player;
-    private float _tempstotal;
+    private int noScene;
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class FinNiv : MonoBehaviour
         _gestionJeu = FindObjectOfType<GestionJeu>();
         _player = FindObjectOfType<Player>();
     }
-
+    public int GetSceneNum() { return noScene; }
 
     public void SetFinis(bool bloop)
     {
@@ -32,16 +33,15 @@ public class FinNiv : MonoBehaviour
         {
             SetFinis(true);
             _player.FinPartie();
-            int noScene = SceneManager.GetActiveScene().buildIndex;
-            if(noScene == 2)
+            noScene = SceneManager.GetActiveScene().buildIndex;
+            if (noScene == 2)
             {
-                Debug.Log(Time.time);
-                // Obtenir le temps total
-                Debug.Log("Le Temps Total est de :" + Time.time + _player.getTempsdebut() + _gestionJeu.GetPoint());
+                _gestionJeu.FinNiveau();
+                Debug.Log(_gestionJeu.GetMess() + " Temps final: " + _gestionJeu.GetTempTot()) ;
             }
             else
             {
-                //Charge la scene suivante 
+                _gestionJeu.FinNiveau();
                 SceneManager.LoadScene(noScene + 1);
             }
         }
