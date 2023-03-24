@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class FinNiv : MonoBehaviour
 {
     //Attribut 
-    private bool isFinis = false;
     private GestionJeu _gestionJeu;
     private Player _player;
     private int noScene;
@@ -21,23 +20,18 @@ public class FinNiv : MonoBehaviour
     }
     public int GetSceneNum() { return noScene; }
 
-    public void SetFinis(bool bloop)
-    {
-        isFinis = bloop;
-    }
-
     //Termine le niveau et enregistre les temps 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            SetFinis(true);
+            
             _player.FinPartie();
             noScene = SceneManager.GetActiveScene().buildIndex;
             if (noScene == 2)
             {
                 _gestionJeu.FinNiveau();
-                Debug.Log(_gestionJeu.GetMess() + " Temps final: " + _gestionJeu.GetTempTot()) ;
+                Debug.Log(_gestionJeu.GetMess() + " Temps final: " + _gestionJeu.GetTempTot() + " Nombre d'accrochage total: " + _gestionJeu.GetPoint() + " Pour un temps total avec penalités de: " + (_gestionJeu.GetTempTot() + _gestionJeu.GetPoint() )) ;
             }
             else
             {
